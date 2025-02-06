@@ -4,6 +4,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+.signature {
+    font-size: 1rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 1rem;
+}
 
 /* Animações chave */
 @keyframes fadeIn {
@@ -208,11 +215,5 @@ footer {
         padding: 0.8rem;
         font-size: 0.9rem;
     }
-    .signature {
-        font-size: 1rem;
-        color: #fff;
-        font-weight: bold;
-        text-align: center;
-        margin-top: 1rem;
-    }
+    
 }
