@@ -191,14 +191,6 @@ button:hover::after {
     transform: translateX(-50%) translateY(-5px);
 }
 
-/* Rodapé */
-footer {
-    margin-top: 2rem;
-    font-size: 0.8rem;
-    color: #555;
-    text-align: center;
-}
-
 /* Responsividade */
 @media (max-width: 500px) {
     .container {
