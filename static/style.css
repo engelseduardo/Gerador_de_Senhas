@@ -159,16 +159,14 @@ h2 {
     animation: fadeIn 1.2s ease-out;
 }
 
-p {
-    font-size: 1.2rem;
-    color: #333;
-    background: #f8f9fa;
-    padding: 1.2rem;
-    border-radius: 8px;
-    border: 2px dashed #2575fc;
-    word-break: break-word;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1.4s ease-out;
+.credit{
+    font-family: 'Georgia', serif;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: right;
+  margin: 20px 0;
+  font-style: italic;
+  letter-spacing: 0.5px;
 }
 
 /* Tooltip interativo */
