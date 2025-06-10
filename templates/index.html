@@ -6,10 +6,7 @@
     <title>Gerador de Senha</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <footer>
-        <p class="signature">By Engels Cenci</p>
-    </footer>   
+<body>  
     <div class="container">
         <h1>Gerador de Senha Aleatória</h1>
         <form method="POST">
@@ -37,6 +34,7 @@
             <h2>Senha Gerada:</h2>
             <p>{{ password }}</p>
         {% endif %}
+        <p>By Engels Cenci</p>
     </div> 
 </body>
 </html>
