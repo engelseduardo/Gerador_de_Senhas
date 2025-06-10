@@ -159,14 +159,55 @@ h2 {
     animation: fadeIn 1.2s ease-out;
 }
 
-.credit{
-    font-family: 'Georgia', serif;
+.credit {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  padding: 15px 0;
+  background: rgba(0, 0, 0, 0.7); /* fundo semi-transparente */
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
-  color: #555;
-  text-align: right;
-  margin: 20px 0;
-  font-style: italic;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease; /* animação suave */
+  z-index: 1000; /* para ficar acima de outros elementos */
+}
+
+/* Efeitos interativos */
+.credit:hover {
+  background: rgba(0, 0, 0, 0.9);
+  padding: 20px 0;
+  color: #4fc3f7; /* cor azul clara ao passar o mouse */
+}
+
+/* Se quiser um efeito de "aparecer suavemente" quando a página carrega */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.credit {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+/* Adicione isso se quiser que o texto fique pulsante */
+@keyframes pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.credit {
+  animation: fadeInUp 0.8s ease-out, pulse 4s infinite;
 }
 
 /* Tooltip interativo */
