@@ -165,49 +165,108 @@ h2 {
   left: 0;
   right: 0;
   text-align: center;
-  padding: 15px 0;
-  background: rgba(0, 0, 0, 0.7); /* fundo semi-transparente */
+  padding: 20px 0;
+  background: linear-gradient(to right, rgba(106, 17, 203, 0.8), rgba(37, 117, 252, 0.8));
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-size: 0.9rem;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  transition: all 0.3s ease; /* animação suave */
-  z-index: 1000; /* para ficar acima de outros elementos */
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1000;
+  backdrop-filter: blur(5px); /* Efeito de vidro fosco */
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Efeitos interativos */
+/* Efeitos interativos aprimorados */
 .credit:hover {
-  background: rgba(0, 0, 0, 0.9);
-  padding: 20px 0;
-  color: #4fc3f7; /* cor azul clara ao passar o mouse */
+  background: linear-gradient(to right, rgba(106, 17, 203, 0.95), rgba(37, 117, 252, 0.95));
+  padding: 25px 0;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* Se quiser um efeito de "aparecer suavemente" quando a página carrega */
-@keyframes fadeInUp {
-  from {
+/* Animação de entrada mais suave */
+@keyframes slideInUp {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(100%);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
 .credit {
-  animation: fadeInUp 0.8s ease-out;
+  animation: slideInUp 0.8s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-/* Adicione isso se quiser que o texto fique pulsante */
-@keyframes pulse {
-  0% { opacity: 0.8; }
-  50% { opacity: 1; }
-  100% { opacity: 0.8; }
+/* Efeito de onda ao clicar */
+.credit:active {
+  animation: waveEffect 0.4s ease;
 }
 
-.credit {
-  animation: fadeInUp 0.8s ease-out, pulse 4s infinite;
+@keyframes waveEffect {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+}
+
+/* Tooltip para o crédito */
+.credit::before {
+  content: "Desenvolvido com ♥";
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #6a11cb;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.credit:hover::before {
+  opacity: 1;
+  top: -50px;
+}
+
+/* Efeito de brilho sutil */
+.credit::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.7), transparent);
+  opacity: 0.5;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .credit {
+    font-size: 0.8rem;
+    padding: 15px 0;
+  }
+  
+  .credit:hover {
+    padding: 18px 0;
+  }
+  
+  .credit::before {
+    font-size: 0.7rem;
+    top: -35px;
+  }
 }
 
 /* Tooltip interativo */
